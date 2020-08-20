@@ -35,8 +35,8 @@ public class EntradaTexto extends Entrada {
      *
      * @return Devuelve el contenido de la entrada.
      */
-    public String getMensaje() {
-        return mensaje;
+    public String getUsuarioYMensaje() {
+        return ("Usuario : " + getUsuario() + "\nMEnsaje: " + mensaje);
     }
 
     /**
@@ -47,9 +47,21 @@ public class EntradaTexto extends Entrada {
     @Override
     public String toString() {
         String aDevolver = "";
-        aDevolver += "Usuario: " + usuario + "\n";
-        aDevolver += "Likes: " + cantidadMeGusta + "\n";
+        aDevolver += "Usuario: " + getUsuario() + "\n";
+        aDevolver += "Likes: " + getMeGustas() + "\n";
         aDevolver += mensaje + "\n";
+        aDevolver += "Publicado hace " + getMomentoPublicacion() + "\n";
+        ArrayList<String> comentarios = getComentarios();
+        // Comprobamos si hay comentarios
+        if(comentarios.size() == 0){
+            aDevolver += "No hay comentarios\n";
+        }
+        else{
+            aDevolver += "Comentarios: \n";
+            for(String comentarioActual : comentarios){
+                aDevolver += comentarioActual + "\n";
+            }
+        }
         return aDevolver;
     }
 }

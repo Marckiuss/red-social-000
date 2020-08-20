@@ -25,10 +25,10 @@ public class MuroTest {
         muro.addEntradaFoto(entrada04);
 
         System.out.println(muro);
-        String resultado = "Usuario: Pepe\nLikes: 0\nHawai!\nEscrito hace 10 segundos\nNo hay comentarios\n\n\n";
-        resultado += "Usuario: Kim\nLikes: 0\nLlueve fuera...\nEscrito hace 10 segundos\nNo hay comentarios\n\n\n";
-        resultado += "Usuario: Luis\nLikes: 0\nUrl: https://bit.ly/2W1dO09\nTitulo: Gracias\nEscrito hace 10 segundos\nNo hay comentarios\n\n\n";
-        resultado += "Usuario: Cristina\nLikes: 0\nUrl: https://bit.ly/3cY9vtD\nTitulo: Una foto de mi nevera\nEscrito hace 10 segundos\nNo hay comentarios\n\n\n";
+        String resultado = "Usuario: Pepe\nLikes: 0\nHawai!\nPublicado hace 10 segundos\nNo hay comentarios\n\n\n";
+        resultado += "Usuario: Kim\nLikes: 0\nLlueve fuera...\nPublicado hace 10 segundos\nNo hay comentarios\n\n\n";
+        resultado += "Usuario: Luis\nLikes: 0\nUrl: https://bit.ly/2W1dO09\nTitulo: Gracias\nPublicado hace 10 segundos\nNo hay comentarios\n\n\n";
+        resultado += "Usuario: Cristina\nLikes: 0\nUrl: https://bit.ly/3cY9vtD\nTitulo: Una foto de mi nevera\nPublicado hace 10 segundos\nNo hay comentarios\n\n\n";
 
         assertEquals(resultado, muro.toString());
     }

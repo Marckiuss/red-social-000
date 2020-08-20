@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 public class Entrada {
     // Usuario que crea la entrada.
-    protected String usuario;
+    private String usuario;
     // Fecha de publicacion de la entrada.
-    protected String momentoPublicacion;
+    private String momentoPublicacion;
     // Numero de 'me gusta' de la entrada.
-    protected int cantidadMeGusta;
+    private int cantidadMeGustas;
     // Comentarios de la entrada.
-    protected ArrayList<String> comentarios;
+    private ArrayList<String> comentarios;
 
     /**
      * constructor de la clase entrada
@@ -18,7 +18,7 @@ public class Entrada {
     public Entrada(String usuario) {
         this.usuario = usuario;
         this.momentoPublicacion = "10 segundos";
-        cantidadMeGusta = 0;
+        cantidadMeGustas = 0;
         comentarios = new ArrayList<>();
     }
 
@@ -26,7 +26,7 @@ public class Entrada {
      * Anade un 'me gusta' a la entrada.
      */
     public void meGusta() {
-        cantidadMeGusta += 1;
+        cantidadMeGustas += 1;
     }
 
     /**
@@ -45,6 +45,18 @@ public class Entrada {
      */
     public String getMomentoPublicacion() {
         return momentoPublicacion;
+    }
+
+    public String getUsuario(){
+        return usuario;
+    }
+
+    public ArrayList getComentarios(){
+        return comentarios;
+    }
+
+    public int getMeGustas(){
+        return cantidadMeGustas;
     }
 
     /**

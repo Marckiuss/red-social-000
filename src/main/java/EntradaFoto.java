@@ -59,10 +59,22 @@ public class EntradaFoto extends Entrada {
     @Override
     public String toString() {
         String aDevolver = "";
-        aDevolver += "Usuario: " + usuario + "\n";
-        aDevolver += "Likes: " + cantidadMeGusta + "\n";
+        aDevolver += "Usuario: " + getUsuario() + "\n";
+        aDevolver += "Likes: " + getMeGustas() + "\n";
         aDevolver += "Url: " + urlImagen + "\n";
         aDevolver += "Titulo: " + titulo + "\n";
+        aDevolver += "Publicado hace " + getMomentoPublicacion() + "\n";
+        ArrayList<String> comentarios = getComentarios();
+        // Comprobamos si hay comentarios
+        if(comentarios.size() == 0){
+            aDevolver += "No hay comentarios\n";
+        }
+        else{
+            aDevolver += "Comentarios: \n";
+            for(String comentarioActual : comentarios){
+                aDevolver += comentarioActual + "\n";
+            }
+        }
         return aDevolver;
     }
 }
