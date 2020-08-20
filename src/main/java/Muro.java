@@ -2,18 +2,17 @@ import java.util.ArrayList;
 
 /**
  * El muro de nuestra red social.
- *
+ * <p>
  * El muro es el lugar donde los usuarios publicaran sus entradas.
  *
  * @author DAM
  * @version 1.0
  */
-public class Muro
-{
+public class Muro {
     // Entradas de texto
-    private ArrayList <EntradaTexto> mensajes;
+    private ArrayList<EntradaTexto> mensajes;
     // Entradas con imagenes
-    private ArrayList <EntradaFoto> fotos;
+    private ArrayList<EntradaFoto> fotos;
 
     /**
      * Constructor - Construye e inicializa un muro vacio.
@@ -26,6 +25,7 @@ public class Muro
 
     /**
      * Anade una entrada de texto al muro.
+     *
      * @param entrada La entrada de texto a anadir.
      */
     public void addEntradaTexto(EntradaTexto entrada) {
@@ -34,6 +34,7 @@ public class Muro
 
     /**
      * Anade una entrada de imagen al muro.
+     *
      * @param entradaFoto La entrada de imagen a anadir.
      */
     public void addEntradaFoto(EntradaFoto entradaFoto) {
@@ -42,6 +43,7 @@ public class Muro
 
     /**
      * Devuelve una cadena con toda la informacion del muro.
+     *
      * @return Devuelve una cadena con toda la informacion del muro.
      */
     @Override

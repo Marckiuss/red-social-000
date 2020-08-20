@@ -1,11 +1,12 @@
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
  * Clase de test para el muro de la red social
  *
- *  @author DAM
- *  @version 1.0
+ * @author DAM
+ * @version 1.0
  */
 public class MuroTest {
     @Test

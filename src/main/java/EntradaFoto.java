@@ -4,71 +4,47 @@ import java.time.temporal.ChronoUnit;
 
 /**
  * Una entrada con imagenes
- *
+ * <p>
  * Una entrada es un contenido que el usuario comparte en su muro con la comunidad.
  * Las entradas con imagenes se crean a partir de un autor, un titulo
  * para la imagen y la url de la imagen.
  *
- *  @author DAM
- *  @version 1.0
+ * @author DAM
+ * @version 1.0
  */
-public class EntradaFoto
-{
-    // Usuario que crea la entrada.
-    private String usuario;
+public class EntradaFoto extends Entrada {
     // URL de la imagen.
     private String urlImagen;
     //Título de la entrada.
     private String titulo;
-    // Fecha de publicacion de la entrada.
-    private String momentoPublicacion;
-    // Numero de 'me gusta' de la entrada.
-    private int cantidadMeGusta;
-    // Comentarios de la entrada.
-    private ArrayList<String> comentarios;
 
     /**
      * Constructor - Construye entradas a partir de un autor, el titulo de la imagen y su URL.
      * Las entradas se crean sin ningun ' me gusta'.
      * La fecha de publicacion coincide con el momento en el que se crea la entrada.
-     * @param autor Autor de la entrada.
+     *
      * @param titulo Titulo de la imagen.
-     * @param url URL de la imagen.
+     * @param url    URL de la imagen.
      */
-    public EntradaFoto (String autor, String url, String titulo) {
-        usuario = autor;
-        urlImagen = url;
+    public EntradaFoto(String usuario, String url, String titulo) {
+        super(usuario);
+        this.urlImagen = url;
         this.titulo = titulo;
-        momentoPublicacion = "hace 10 minutos";
-        cantidadMeGusta = 0;
-        comentarios = new ArrayList<>();
-    }
-
-    /**
-     * Anade un 'me gusta' a la entrada.
-     */
-    public void meGusta() {
-        cantidadMeGusta += 1;
-    }
-
-    /**
-     * Anade un comentario a a la entrada.
-     * @param textoComentario El comentario a anadir.
-     */
-    public void addComentario(String textoComentario) {
-        comentarios.add(textoComentario);
     }
 
     /**
      * Devuelve el URL de la imagen.
+     *
      * @return Devuelve el URL de la imagen.
      */
     public String getUrlImagen() {
+
         return urlImagen;
     }
 
     /**
      * Devuelve el titulo de la imagen.
+     *
      * @return Devuelve el titulo de la imagen.
      */
     public String getTituloImagen() {
@@ -77,15 +53,8 @@ public class EntradaFoto
 
     /**
      * Devuelve la fecha de publicacion.
+     *
      * @return Devuelve la fecha de publicacion.
-     */
-    public String getMomentoPublicacion() {
-        return momentoPublicacion;
-    }
-
-    /**
-     * Devuelve una cadena con toda la informacion de la entrada.
-     * @return Devuelve una cadena con toda la informacion de la entrada.
      */
     @Override
     public String toString() {
@@ -94,20 +63,6 @@ public class EntradaFoto
         aDevolver += "Likes: " + cantidadMeGusta + "\n";
         aDevolver += "Url: " + urlImagen + "\n";
         aDevolver += "Titulo: " + titulo + "\n";
-
-        aDevolver += "Escrito hace 10 minutos";
-
-        // Comprobamos si hay comentarios. Si hay los mostramos, si no, mostramos un mensaje indicandolo.
-        if (comentarios.size() == 0) {
-            aDevolver += "No hay comentarios\n";
-        }
-        else {
-            aDevolver += "Comentarios: \n";
-            for (String comentarioActual : comentarios) {
-                aDevolver += comentarioActual + "\n";
-            }
-        }
-
         return aDevolver;
     }
 }
