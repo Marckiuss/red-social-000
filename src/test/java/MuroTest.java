@@ -18,17 +18,20 @@ public class MuroTest {
         EntradaFoto entrada02 = new EntradaFoto("Luis", "https://bit.ly/2W1dO09", "Gracias");
         EntradaTexto entrada03 = new EntradaTexto("Kim", "Llueve fuera...");
         EntradaFoto entrada04 = new EntradaFoto("Cristina", "https://bit.ly/3cY9vtD", "Una foto de mi nevera");
+        EntradaEvento entrada05 = new EntradaEvento("Marc", "Ha cambiado su nombre de usuario");
 
-        muro.addEntradaTexto(entrada01);
-        muro.addEntradaFoto(entrada02);
-        muro.addEntradaTexto(entrada03);
-        muro.addEntradaFoto(entrada04);
+        muro.addEntrada(entrada01);
+        muro.addEntrada(entrada02);
+        muro.addEntrada(entrada03);
+        muro.addEntrada(entrada04);
+        muro.addEntrada(entrada05);
 
         System.out.println(muro);
-        String resultado = "Usuario: Pepe\nLikes: 0\nHawai!\nPublicado hace 10 segundos\nNo hay comentarios\n\n\n";
-        resultado += "Usuario: Kim\nLikes: 0\nLlueve fuera...\nPublicado hace 10 segundos\nNo hay comentarios\n\n\n";
-        resultado += "Usuario: Luis\nLikes: 0\nUrl: https://bit.ly/2W1dO09\nTitulo: Gracias\nPublicado hace 10 segundos\nNo hay comentarios\n\n\n";
-        resultado += "Usuario: Cristina\nLikes: 0\nUrl: https://bit.ly/3cY9vtD\nTitulo: Una foto de mi nevera\nPublicado hace 10 segundos\nNo hay comentarios\n\n\n";
+        String resultado = "Usuario: Pepe\nLikes: 0\nPublicado hace 10 segundos\nNo hay comentarios\nHawai!\n\n\n";
+        resultado += "Usuario: Luis\nLikes: 0\nPublicado hace 10 segundos\nNo hay comentarios\nUrl: https://bit.ly/2W1dO09\nTitulo: Gracias\n\n\n";
+        resultado += "Usuario: Kim\nLikes: 0\nPublicado hace 10 segundos\nNo hay comentarios\nLlueve fuera...\n\n\n";
+        resultado += "Usuario: Cristina\nLikes: 0\nPublicado hace 10 segundos\nNo hay comentarios\nUrl: https://bit.ly/3cY9vtD\nTitulo: Una foto de mi nevera\n\n\n";
+        resultado += "Usuario: Marc\nLikes: 0\nPublicado hace 10 segundos\nHa cambiado su nombre de usuario\n\n\n";
 
         assertEquals(resultado, muro.toString());
     }

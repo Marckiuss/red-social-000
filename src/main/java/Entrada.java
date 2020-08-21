@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Entrada {
     // Usuario que crea la entrada.
     private String usuario;
@@ -7,8 +5,6 @@ public class Entrada {
     private String momentoPublicacion;
     // Numero de 'me gusta' de la entrada.
     private int cantidadMeGustas;
-    // Comentarios de la entrada.
-    private ArrayList<String> comentarios;
 
     /**
      * constructor de la clase entrada
@@ -19,23 +15,6 @@ public class Entrada {
         this.usuario = usuario;
         this.momentoPublicacion = "10 segundos";
         cantidadMeGustas = 0;
-        comentarios = new ArrayList<>();
-    }
-
-    /**
-     * Anade un 'me gusta' a la entrada.
-     */
-    public void meGusta() {
-        cantidadMeGustas += 1;
-    }
-
-    /**
-     * Anade un comentario a a la entrada.
-     *
-     * @param text El comentario a anadir.
-     */
-    public void addComentario(String text) {
-        comentarios.add(text);
     }
 
     /**
@@ -43,20 +22,21 @@ public class Entrada {
      *
      * @return Devuelve la fecha de publicacion.
      */
-    public String getMomentoPublicacion() {
+    public String getMomentoPublicacion()
+    {
         return momentoPublicacion;
     }
 
-    public String getUsuario(){
+    public String getUsuario() {
         return usuario;
     }
 
-    public ArrayList getComentarios(){
-        return comentarios;
+    public int getMeGustas() {
+        return cantidadMeGustas;
     }
 
-    public int getMeGustas(){
-        return cantidadMeGustas;
+    public void meGusta(){
+        cantidadMeGustas ++;
     }
 
     /**
@@ -66,8 +46,12 @@ public class Entrada {
      */
     @Override
     public String toString() {
+        String aDevolver = "";
+        aDevolver += "Usuario: " + getUsuario() + "\n";
+        aDevolver += "Likes: " + getMeGustas() + "\n";
+        aDevolver += "Publicado hace 10 segundos\n";
+        return aDevolver;
 
-        return "";
     }
 }
 
