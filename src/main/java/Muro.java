@@ -29,6 +29,12 @@ public class Muro {
         entradas.add(entrada);
     }
 
+    public void mostrarDetallesTodasLasEntradas(){
+        for(Entrada entradaActual : entradas){
+            entradaActual.mostrarDetallesPorPantalla();
+        }
+
+    }
     @Override
     public String toString() {
         String aDevolver = "";

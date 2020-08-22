@@ -39,6 +39,9 @@ public class Entrada {
         cantidadMeGustas ++;
     }
 
+    public void mostrarDetallesPorPantalla(){
+    }
+
     /**
      * Devuelve una cadena con toda la informacion de la entrada.
      *

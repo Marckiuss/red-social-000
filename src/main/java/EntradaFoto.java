@@ -32,6 +32,10 @@ public class EntradaFoto extends EntradaConComentarios {
         this.titulo = titulo;
     }
 
+    public void mostrarDetallesPorPantalla(){
+        System.out.println(urlImagen + "\n" + titulo);
+    }
+
     @Override
     public String toString() {
         String aDevolver = "";
