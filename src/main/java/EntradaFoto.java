@@ -36,6 +36,10 @@ public class EntradaFoto extends EntradaConComentarios {
         System.out.println(urlImagen + "\n" + titulo);
     }
 
+    public String getUrlImagen(){
+        return urlImagen;
+    }
+
     @Override
     public String toString() {
         String aDevolver = "";

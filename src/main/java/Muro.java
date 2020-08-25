@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class Muro {
     // Entradas de todo tipo
     private ArrayList<Entrada> entradas;
+    private ArrayList<String> urlFotos;
 
     /**
      * Constructor - Construye e inicializa un muro vacio.
@@ -18,6 +19,7 @@ public class Muro {
     public Muro() {
         //Inicialización del ArrayList entradas.
         entradas = new ArrayList<>();
+        urlFotos = new ArrayList<>();
     }
 
     /**
@@ -35,6 +37,23 @@ public class Muro {
         }
 
     }
+
+    public String [] getUrlFotos(){
+        String aImprimir = "";
+        int tamanoArray = entradas.size();
+        String[] urlFotos = new String[tamanoArray];
+        int contador = 0;
+        for(Entrada entradaActual : entradas){
+            contador ++ ;
+            EntradaFoto foto = (EntradaFoto)entradaActual;
+            urlFotos[contador] = foto.getUrlImagen() + "\n";
+            aImprimir += foto.getUrlImagen() + "\n";
+        }
+        System.out.println(aImprimir);
+        return urlFotos;
+        
+    }
+
     @Override
     public String toString() {
         String aDevolver = "";
@@ -44,4 +63,3 @@ public class Muro {
         return aDevolver;
     }
 }
-
